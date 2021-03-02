@@ -5,49 +5,54 @@ router.get('/', (request, response) => {
     response.render('home')
   })
   
-//   router.get('/', (request, response) => {
-//     response.render('welcome')
-//})
-  
-  router.get('/contact_us', (request, response) => response.render('contact'))
-  
-  router.get('/thank_you', (request, response) => {
-  
-    const { name, email, message } = request.query
+  router.get('/cohorts', (request, response) => {
+      response.render('current')
+  })
 
-    response.render('thank_you', {
-      name, // name: name
-      email,
-      message,
-    })
-  })
+router.get('/cohorts/new', (request, response) => {
+    response.render('new')
+})
+
   
-  router.get('/survey', (request, response) => {
-    const cats = [
-      'Persian',
-      'Garfield',
-      'Sylvester',
-      'Chester',
-    ]
+//   router.get('/contact_us', (request, response) => response.render('contact'))
   
-    const cheeses = [
-      'Classic American Cheddar',
-      'Feta',
-      'Gouda',
-      'Blue',
-      'Brie',    
-    ]
+//   router.get('/thank_you', (request, response) => {
   
-    const { name, colour, cat, cheese } = request.query
-    response.render('survey', {
-      cats, // cats: cats
-      cheeses,
-      name,
-      favouriteColour: colour,
-      favouriteCat: cat,
-      favouriteCheese: cheese,
-    })
-  })
+//     const { name, email, message } = request.query
+
+//     response.render('thank_you', {
+//       name, // name: name
+//       email,
+//       message,
+//     })
+//   })
+  
+//   router.get('/survey', (request, response) => {
+//     const cats = [
+//       'Persian',
+//       'Garfield',
+//       'Sylvester',
+//       'Chester',
+//     ]
+  
+//     const cheeses = [
+//       'Classic American Cheddar',
+//       'Feta',
+//       'Gouda',
+//       'Blue',
+//       'Brie',    
+//     ]
+  
+//     const { name, colour, cat, cheese } = request.query
+//     response.render('survey', {
+//       cats, // cats: cats
+//       cheeses,
+//       name,
+//       favouriteColour: colour,
+//       favouriteCat: cat,
+//       favouriteCheese: cheese,
+//     })
+//   })
   
   const COOKIE_MAX_AGE = 1000 * 60 * 60 * 24 * 30 // number of milliseconds in 30 days
   router.post('/sign_in', (request, response) => {
