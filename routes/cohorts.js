@@ -3,17 +3,28 @@ const router = express.Router()
 
 router.get('/', (request, response) => {
     response.render('home')
-  })
+})
   
-  router.get('/cohorts', (request, response) => {
-      response.render('current')
-  })
+router.get('/cohorts', (request, response) => {
+    response.render('current')
+})
 
 router.get('/cohorts/new', (request, response) => {
     response.render('new')
 })
 
+router.get('/confirmed', (request, response) => {
   
+  const { logo, name, members } = request.query
+
+  response.render('confirmed', {
+    logo,
+    name,
+    members,
+  })
+})
+
+
 //   router.get('/contact_us', (request, response) => response.render('contact'))
   
 //   router.get('/thank_you', (request, response) => {

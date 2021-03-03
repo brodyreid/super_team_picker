@@ -1,6 +1,7 @@
 <%- include('./partials/header') %>
 <title>New Cohort</title>
-<form action="/">
+<!-- GET or POST method here? -->
+<form action="/confirmed" method="GET"> 
     <div class="mb-3">
       <label for="logo" class="form-label">Logo URL</label>
       <input type="text" class="form-control" id="logo" placeholder="e.g. https://www.example.com/some.png">
@@ -13,6 +14,6 @@
       <label for="members" class="form-label">Members</label>
       <textarea class="form-control" id="members" placeholder="Jon Snow, Daenerys, Melisandre, Arya Stark" rows="3"></textarea>
     </div>
-    <button type="button" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 <%- include('./partials/footer') %>
