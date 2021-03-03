@@ -5,7 +5,14 @@ module.exports = {
   development: {
     client: 'pg',
     connection: {
-      database: 'superTeamPicker'
+      database: 'cohorts'
+    },
+    migrations: {
+      tableName: 'migrations',
+      directory: './db/migrations'
+    },
+    seeds: {
+      directory: './db/seeds'
     }
   },
 
@@ -20,9 +27,6 @@ module.exports = {
       min: 2,
       max: 10
     },
-    migrations: {
-      tableName: 'migrations',
-      directory: './db/migrations'
-    }
+    
   },
 };

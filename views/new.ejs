@@ -1,19 +1,19 @@
 <%- include('./partials/header') %>
 <title>New Cohort</title>
 <!-- GET or POST method here? -->
-<form action="/confirmed" method="GET"> 
-    <div class="mb-3">
-      <label for="logo" class="form-label">Logo URL</label>
-      <input type="text" class="form-control" id="logo" placeholder="e.g. https://www.example.com/some.png">
-    </div>
-    <div class="mb-3">
-      <label for="name" class="form-label">Name</label>
-      <input type="text" class="form-control" id="name" placeholder="Flying Funks">
-    </div>
-    <div class="mb-3">
-      <label for="members" class="form-label">Members</label>
-      <textarea class="form-control" id="members" placeholder="Jon Snow, Daenerys, Melisandre, Arya Stark" rows="3"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+<form action="/cohorts" method="POST">
+  <div class="mb-3">
+    <label for="logo" class="form-label">Logo URL</label>
+    <input type="text" class="form-control" id="logo" name='logo' placeholder="e.g. https://www.example.com/some.png">
+  </div>
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" name='name' placeholder="Flying Funks">
+  </div>
+  <div class="mb-3">
+    <label for="members" class="form-label">Members</label>
+    <textarea class="form-control" id="members" name='members' placeholder="Jon Snow, Daenerys, Melisandre, Arya Stark" rows="3"></textarea>
+  </div>
+  <input type="submit" class="btn btn-primary" value="Submit"></input>
+</form>
 <%- include('./partials/footer') %>
