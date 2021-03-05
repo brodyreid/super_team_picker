@@ -1,19 +1,12 @@
 <%- include('./partials/header') %>
-<h1>current teams are</h1>
-<% for (let cohort of cohorts) {%>
 <div class='card'>
     <div class='card-body'>
         <div class='card-title'>
-            <img src="<%= cohort.logo %>" class="card-img-top w-25 rounded-circle" alt="logoURL"> 
             <h4><%= cohort.name %></h4>
         </div>
         <div class='card-text'>
             <%= cohort.members %> 
         </div>
-        <div class='card-text'>
-            <a href='/cohorts/<%= cohort.id %>' class='btn btn-primary'>Show Cohort</a> 
-        </div>
     </div>
 </div>
-<% } %> 
 <%- include('./partials/footer') %>
