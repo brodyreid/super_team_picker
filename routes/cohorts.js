@@ -44,13 +44,14 @@ router.post('/cohorts', (request, response) => {
 // Show specific cohort
 router.get('/cohorts/:id', (request, response) => {
   const id = request.params.id
-
+  
   return knex('cohorts')
     .where('id', id)
     .first()
     .then(cohort => {
-      response.render('show', { cohort })
+      response.render('show', { cohort: cohort, method: request.query.method, quantity: request.query.quantity })
     })
+  
 })
   
 module.exports = router

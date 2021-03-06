@@ -16,6 +16,12 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
+// app.use(methodOverride((request, response) => {
+//     if (request.body && request.body._method) {
+//         const method = request.body._method
+//         return method
+//     }
+// }))
 
 // Set up connection
 const PORT = 3000

@@ -9,4 +9,47 @@
         </div>
     </div>
 </div>
+<div class='card'>
+    <form method='GET'>
+        <div>
+            <input type="radio" id="team-count" value="team-count" name="method">
+            <label for="team-count">Team Count</label>
+        </div>
+        <div>
+            <input type="radio" id="number-per-team" value="number-per-team" name="method">
+            <label for="number-per-team">Number per Team</label>
+        </div>
+        <div>
+            <label for="quantity">Quantity</label>
+            <input type="text" id="quantity" name="quantity">  
+        </div>
+        <input type="submit" class="btn btn-primary w-25" value="Assign Teams">
+    </form>
+</div>
+
+<% const members = cohort.members %>
+<% const membersArray = members.split(/[ ,]+/) %>
+
+<!-- Method = Team Count -->
+
+<% if (method === 'team-count') { %>
+    <table class='table'>
+        <thead>
+            <tr>
+                <th scope='col'>#</th>
+                <th scope='col'>Members</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% for (let i = 0; i < membersArray.length; i++) { %> 
+            <tr>
+                <td> <%= i + 1 %> </td>
+                <td> <%= membersArray[i] %> </td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+             
+<% } %> 
 <%- include('./partials/footer') %>
