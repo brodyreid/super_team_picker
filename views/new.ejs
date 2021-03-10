@@ -3,17 +3,25 @@
 <!-- GET or POST method here? -->
 <form action="/cohorts" method="POST">
   <div class="mb-3">
-    <label for="logo" class="form-label">Logo URL</label>
+    <label for="logo" class="form-label"><b>Logo URL</b></label>
     <input type="text" class="form-control" id="logo" name='logo' placeholder="e.g. https://www.example.com/some.png">
   </div>
   <div class="mb-3">
-    <label for="name" class="form-label">Name</label>
+    <label for="name" class="form-label"><b>Name</b></label>
     <input type="text" class="form-control" id="name" name='name' placeholder="Flying Funks">
   </div>
   <div class="mb-3">
-    <label for="members" class="form-label">Members</label>
+    <label for="members" class="form-label"><b>Members</b></label>
     <textarea class="form-control" id="members" name='members' placeholder="Jon Snow, Daenerys, Melisandre, Arya Stark" rows="3"></textarea>
   </div>
-  <input type="submit" class="btn btn-primary" value="Submit"></input>
-</form>
+  <div class="buttonSpace">
+    <button id="splitBtn"><b>Submit!</b></button>   </div>
+    <style>.buttonSpace { margin-top: 1rem; width: 100%;text-align: center;}
+    .buttonSpace button {margin-top: .6rem;border-radius: 20px; display: inline-block;padding: .5rem 4rem;font-family: 'Lora', serif; font-size: 1.2rem;}
+     button:hover {background-color: rgb(187, 224, 238);}
+     button:active {background-color: #d7eed8;box-shadow: 0 5px #666;
+  transform: translateY(4px);}
+     </style>
+
+
 <%- include('./partials/footer') %>

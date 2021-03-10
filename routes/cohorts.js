@@ -37,8 +37,9 @@ router.post('/cohorts', (request, response) => {
     )
     .then((data) => {
       console.table(data)
-      response.send(data)
     })
+    .catch(console.error)
+    response.redirect('/cohorts')
 })
 
 // Show specific cohort
